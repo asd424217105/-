@@ -1,0 +1,22 @@
+<!--newusertwo-individual.wxml-->
+<!-- wetoast -->
+<import src="../../src/wetoast.wxml"/>
+<template is="wetoast" data="{{...__wetoast__}}"/>
+
+<view class="container">
+  <form bindsubmit="formSubmit">
+    <view class="modifyOld">
+      <view class="leftText">旧密码</view>
+      <input placeholder-style="color:#888" class="input" placeholder="请输入旧密码" password="true" name="oldPwd" />
+    </view>
+    <view class="modifyNew">
+      <view class="leftText">新密码</view>
+      <input placeholder-style="color:#888" class="input" placeholder="请输入新密码" password="true" name="newPwd" />
+    </view>
+    <view class="confirm_password">
+      <view class="leftText">确认密码</view>
+      <input placeholder-style="color:#888" class="input" placeholder="请再次输入新密码" password="true" name="confirmPwd" />
+    </view>
+    <button class="tj-btn" formType="submit">提交</button>
+  </form>
+</view>

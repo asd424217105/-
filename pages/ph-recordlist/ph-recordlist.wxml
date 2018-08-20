@@ -1,0 +1,19 @@
+<!--followlist.wxml-->
+<!-- wetoast -->
+<import src="../../src/wetoast.wxml"/>
+<template is="wetoast" data="{{...__wetoast__}}"/>
+
+<view class="container">
+  <!-- 关注企业列表 -->
+  <view class="company-item" wx:for="{{information}}" wx:for-item="item" wx:key="key" bindtap="turndown" data-item="{{item}}">
+    <text class="companyname">{{item.company_name}}</text>
+    <view class="companytime">
+      <text class="time">{{item.apply_time}}</text>
+    </view>
+  </view>
+  <!-- 无企业时样式 -->
+  <view class="notitems" wx:if="{{information.length == 0}}">
+    <image src="../../images/xnothing.png"></image>
+    <view class="notmessage">暂无补录企业</view>
+  </view>
+</view>

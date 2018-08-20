@@ -1,0 +1,81 @@
+<!--manualinput.wxml-->
+
+<!-- wetoast -->
+<import src="../../src/wetoast.wxml"/>
+<template is="wetoast" data="{{...__wetoast__}}"/>
+
+<view class="container">
+  <form bindsubmit="formSubmit" bindreset="formReset">
+  <view class="company-box">
+    <view class="company-item">
+      <text>社会统一信用代码</text>
+      <input type="text" placeholder="请输入社会统一信用代码" value='{{res_msg.licence_num}}' disabled name="licence_num"/>
+    </view>
+    <view class="company-item">
+      <text>企业名称</text>
+      <input type="text" placeholder="请输入企业名称" value='{{res_msg.legal_name}}' disabled name="legal_name"/> 
+    </view>
+    <view class="company-item">
+      <text>法定代表人</text>
+      <input type="text" placeholder="请输入法定代表人" value='{{res_msg.name}}' disabled name="name"/> 
+    </view>
+    <view class="company-item">
+      <text>企业性质</text>
+      <view class="xingzhi">
+        <text data-num="1" class="{{res_msg.type==1?'cur':''}}">有限公司</text>
+        <text data-num="2" class="{{res_msg.type==2?'cur':''}}">个体工商户</text>
+      </view>
+    </view>
+    <!-- 营业期限 -->
+    <view class="company-item">
+      <text>营业期限</text>
+      <picker mode="date" value="{{date1}}" disabled>
+        <view class="picker">{{date1}}</view>
+      </picker>
+      <view class="classname" wx:if="{{res_msg.type==1}}">-</view>
+      <picker mode="date" value="{{date2}}" wx:if="{{res_msg.type==1}}" disabled>
+        <view class="picker">{{date2}}</view>
+      </picker> 
+    </view>
+    <!-- 地址选择器 -->
+    <view class='company-item'>
+      <text>地址</text>
+      <input type="text" placeholder="请输入详细地址" disabled value='{{res_msg.address_all}}' name="address_all" />
+    </view>
+    <!-- 详细地址 -->
+    <view class="company-item">
+      <text>详细地址</text>
+      <input type="text" placeholder="请输入详细地址" disabled value='{{res_msg.address}}' name="address" />
+    </view>
+  </view>
+  <view class="company-box">
+    <view class="company-item2">
+      <text>经营范围</text>
+      <text>{{res_msg.scope}}</text>
+    </view>
+  </view>
+  <view class="company-box">
+    <view class="company-item">
+      <text>业务员</text>
+      <input type="text" disabled value='{{res_msg.admin}}'/>
+    </view>
+    <view class="company-item">
+      <text>是否已经入驻</text>
+      <input type="text" disabled value='{{res_msg.is_settled}}'/>
+    </view>
+  </view>
+  <view class="btnbox">
+    <button class="next-btn {{res_msg.is_follow?'next-btn-gray':''}}" bindtap='follow'>取消关注</button>
+    <button class="next-btn" bindtap='apply'>申请</button>
+  </view>
+  <view class="modal-bg {{apply_box?'modal-bg-hide':''}}">
+    <view class='modal'>
+      <view class='modal-title'>请选择申请认证类型</view>
+      <view bindtap='skip' data-skipid="sq">企业申请</view>
+      <view bindtap='skip' data-skipid="jf">企业缴费</view>
+      <view bindtap='skip' data-skipid="ph">普惠申请</view>
+      <view bindtap='apply'>取消</view>
+    </view>
+  </view>
+  </form>
+</view>

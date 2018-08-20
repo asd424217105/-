@@ -1,0 +1,19 @@
+/* pages/news-details/news-details.wxss */
+.container{
+  padding: 20rpx;
+}
+.container view{
+  margin-bottom: 30rpx;
+}
+.container .news-title{
+  font-size: 34rpx;
+}
+.container .news-body{
+  font-size: 30rpx;
+}
+.container .news-date{
+  font-size: 28rpx;
+  color: #777;
+  text-align: right;
+  width: 100%;
+}

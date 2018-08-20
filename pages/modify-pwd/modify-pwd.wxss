@@ -1,0 +1,54 @@
+/* newusertwo.wxss */
+
+.modifyOld{
+    width:100%;
+    height:100rpx;
+    position:relative;
+    background:#fff;
+    margin-top: 25rpx;
+}
+.modifyNew{
+    width:100%;
+    height:100rpx;
+    position:relative;
+    background:#fff;
+    margin-top: 25rpx;
+    border-bottom:1px solid #ccc;
+}
+.confirm_password{
+    width:100%;
+    height:100rpx;
+    position:relative;
+    background:#fff;
+}
+.leftText{
+    width:25%;
+    position:absolute;
+    left:25rpx;
+    line-height:100rpx;
+}
+.input{
+      position:absolute;
+      right:0;
+      width: 75%;
+      height: 100rpx;
+      padding-left: 20rpx;
+      padding-right: 20rpx;
+      box-sizing: border-box;
+      display: flex;
+      align-items:center;
+      justify-content: space-between;
+      background-color: #ffffff;
+      color:#666;
+}
+.tj-btn{
+  width: 600rpx;
+  height: 72rpx;
+  line-height: 72rpx;
+  background-color: #0077c1;
+  color: #ffffff;
+  position: absolute;
+  bottom: 700rpx;
+  left:50%;
+  margin-left:-300rpx;
+}

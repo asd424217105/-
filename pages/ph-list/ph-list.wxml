@@ -1,0 +1,38 @@
+<!--pages/auditlist/auditlist.wxml-->
+<!-- wetoast -->
+<import src="../../src/wetoast.wxml"/>
+<template is="wetoast" data="{{...__wetoast__}}"/>
+
+<view class="container">
+  <!-- 导航栏 -->
+  <view class="nav">
+    <view>企业名称</view>
+    <view>贷款金额</view>
+    <view>操作日期</view>
+    <view class='nav-status' bindtap="statusboxblock">审核状态<text class="triangle"></text></view>
+  </view>
+  <!-- 状态盒子 -->
+  <view class="statusbox"  animation="{{animationData}}">
+    <view bindtap="onPickHeaderClick" data-id="0" class="{{id==0?'blue':''}}">所有</view>
+    <view bindtap="onPickHeaderClick" data-id="1" class="{{id==1?'blue':''}}">未审核</view>
+    <view bindtap="onPickHeaderClick" data-id="2" class="{{id==2?'blue':''}}">已驳回</view>
+    <view bindtap="onPickHeaderClick" data-id="3" class="{{id==3?'blue':''}}">已通过</view>
+    <view bindtap="onPickHeaderClick" data-id="4" class="{{id==6?'blue':''}}">已结束</view>
+    <view bindtap="onPickHeaderClick" data-id="4" class="{{id==7?'blue':''}}">已完成</view>
+  </view>
+  <!-- 信息列表 -->
+  <view class="item-box" bindtap='turndown' data-stateid='{{item.state_id}}' data-id='{{item.id}}' wx:for="{{information}}" wx:for-item="item" wx:key="key" data-item="{{item}}">
+    <view class="company-item">
+      <view>{{item.name}}</view>
+      <view>{{item.money}}</view>
+      <view>{{item.time}}</view>
+      <view class="companystatus {{item.state_id==1?'yellow':''}} {{item.state_id==2?'red':''}} {{item.state_id==6?'gary':''}}">{{item.state}}</view>
+    </view>
+  </view>
+  <!-- 无此审核状态企业样式 -->
+  <view class="notitems" wx:if="{{information.length == 0}}">
+    <image src="../../images/xnothing.png"></image>
+    <view class="notmessage">暂无此审核状态企业</view>
+  </view>
+</view>
+

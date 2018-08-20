@@ -1,0 +1,77 @@
+/* ph-notcompleted.wxss */
+.news-box{
+  width: 100%;
+  background-color: #FFFFFF; 
+}
+.touch-item {
+ display: flex;
+ font-size: 30rpx;
+ justify-content: space-between;
+ border-bottom:1px solid #ccc;
+ width: 100%;
+ overflow: hidden;
+ min-height: 120rpx;
+}
+.content {
+ width: 100%;
+ display: flex;
+ justify-content: space-between;
+ align-items: center;
+ box-sizing: border-box;
+ margin-top: 30rpx;
+ margin-bottom: 30rpx;
+ background-color: #FFFFFF; 
+ -webkit-transition: all 0.3s;
+ transition: all 0.3s;
+ -webkit-transform: translateX(120rpx);
+ transform: translateX(120rpx);
+ margin-left: -100rpx;
+ padding-right: 14rpx;
+}
+.news-message{
+  width: 500rpx;
+  color: #666666;
+  font-size: 30rpx;
+}
+.news-time{
+  margin-right: 15rpx;
+  color: #999999;
+  font-size: 28rpx;
+  display:flex;
+  align-items:center;
+}
+.del {
+ background-color: orangered;
+ width: 120rpx;
+ display: flex;
+ flex-direction: column;
+ align-items: center;
+ justify-content: center;
+ color: #fff;
+ -webkit-transform: translateX(120rpx);
+ transform: translateX(120rpx);
+ -webkit-transition: all 0.3s;
+ transition: all 0.3s;
+}
+.touch-move-active .content,
+.touch-move-active .del {
+ -webkit-transform: translateX(0);
+ transform: translateX(0);
+}
+/* 页面无数据时页面展示 */
+.notitems{
+  margin-top: 200rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction:column;
+}
+.notitems image{
+  width: 314rpx;
+  height: 314rpx;
+  margin-bottom: 40rpx;
+}
+.notitems .notmessage{
+  font-size: 44rpx;
+  color: #cccccc;
+}

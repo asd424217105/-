@@ -1,0 +1,34 @@
+<!--newuesrone.wxml-->
+
+<!-- wetoast -->
+<import src="../../src/wetoast.wxml"/>
+<template is="wetoast" data="{{...__wetoast__}}"/>
+
+<view class="container">
+  <form bindsubmit="formSubmit">
+  <view class="company-box">
+    <view class="company-item">
+      <text>申请金额</text>
+      <input type="text" placeholder="请输入申请金额" value='{{res_msg.money}}' placeholder-style="color:#cccccc" name="money"/> 
+    </view>
+    <view class="company-item">
+      <text>申请期限</text>
+      <picker bindchange="bindPickerChange" value="{{index}}" range="{{term_arr}}" range-key="{{'name'}}" bindchange="termValue">
+        <view class="picker">
+          {{term_name}}
+        </view>
+      </picker> 
+    </view>
+  </view>
+  <view class="company-box">
+    <view class="company-item2">
+      <text>借款用途</text>
+      <text>{{purpose}}</text>
+    </view>
+  </view>
+  <view class="btnbox">
+    <button class="next-btn" formType="submit" data-num='1'>保存</button>
+    <button class="next-btn" formType="submit" data-num='2'>下一步</button>
+  </view>
+  </form>
+</view>

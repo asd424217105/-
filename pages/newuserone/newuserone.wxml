@@ -1,0 +1,113 @@
+<!--newuesrone.wxml-->
+
+<!-- wetoast -->
+<import src="../../src/wetoast.wxml"/>
+<template is="wetoast" data="{{...__wetoast__}}"/>
+
+<view class="container">
+  <form bindsubmit="formSubmit" bindreset="formReset">
+  <view class="company-box">
+    <view class="company-item">
+      <text>社会统一信用代码</text>
+      <input type="text" placeholder="请输入社会统一信用代码" value='{{res_msg.licence_num}}' placeholder-style="color:#cccccc" name="licence_num"/>
+    </view>
+    <view class="company-item">
+      <text>企业名称</text>
+      <input type="text" placeholder="请输入企业名称" value='{{res_msg.company_name || res_msg.name}}' placeholder-style="color:#cccccc" name="name"/> 
+    </view>
+    <view class="company-item">
+      <text>法定代表人</text>
+      <input type="text" placeholder="请输入法定代表人" value='{{res_msg.legal_name}}' placeholder-style="color:#cccccc" name="legal_name"/> 
+    </view>
+    <view class="company-item">
+      <text>企业性质</text>
+      <view class="xingzhi">
+        <text data-num="1" class="{{_num==1?'cur':''}}" bindtap="menuClick">有限公司</text>
+        <text data-num="2" class="{{_num==2?'cur':''}}" bindtap="menuClick">个体工商户</text>
+      </view>
+    </view>
+    <!-- 营业期限 -->
+    <view class="company-item">
+      <text>营业期限</text>
+      <picker mode="date" value="{{date1}}" bindchange="bindDateChange1">
+        <view class="picker">{{date1_word}}</view>
+      </picker>
+      <view class="classname" wx:if="{{_num==1}}">-</view>
+      <picker mode="date" value="{{date2}}" bindchange="bindDateChange2" wx:if="{{_num==1}}">
+        <view class="picker">{{date2_word}}</view>
+      </picker> 
+    </view>
+    <!-- 地址选择器 -->
+    <view class='company-item'>
+      <text>地址</text>
+      <picker mode="multiSelector" bindchange="bindPickerChange" bindcolumnchange="bindColumnChange" range="{{multiArray}}" value="{{multiIndex}}" range-key="{{'name'}}" >
+        <view class="picker">
+          {{province_name}}{{city_name}}{{area_name}}
+        </view>
+      </picker>
+    </view>
+    <!-- 详细地址 -->
+    <view class="company-item">
+      <text>详细地址</text>
+      <input type="text" placeholder="请输入详细地址" placeholder-style="color:#cccccc" value='{{res_msg.address}}' name="address" />
+    </view>
+  </view>
+  <view class="company-box">
+    <view class="company-item3">
+      <text>经营范围</text>
+      <textarea value='{{res_msg.scope}}' maxlength='-1' placeholder-style="color:#cccccc" auto-height placeholder="请输入经营范围..." name='scope'/>
+    </view>
+  </view>
+  <view class="company-box">
+    <view class="company-item3">
+      <view>
+        <view>公司简介</view>
+        <view class='ocr-btn' bindtap='ocrBtn'>扫描识别</view>
+      </view>
+      <textarea value='{{ocrmsg || res_msg.intro}}' maxlength='-1' placeholder-style="color:#cccccc" auto-height placeholder="请输入公司简介..." name='intro'/>
+    </view>
+  </view>
+  <view class="company-box">
+    <view class="company-item company-item2">
+      <text>营业执照</text>
+      <view class="voucher">
+        <view class="upload" wx:if="{{imgs.licence_image}}">
+          <image src="{{imgs.licence_image}}" data-src="{{imgs.licence_image}}" data-srcs="{{[imgs.licence_image]}}" bindtap="previewImage" class="uploadimg"></image>
+          <image src="../../images/close.png" data-idx="licence" bindtap="close" class="close"></image> 
+        </view>
+        <view class="upload" wx:if="{{imgs.licence_image.length==0||imgs.licence_image==undefined}}">
+          <image src="../../images/upload.png" bindtap="chooselicence" class="uploadimg"></image>
+        </view>
+      </view> 
+    </view>
+    <view class="company-item company-item2">
+      <text>机构信用代码证(选填)</text>
+      <view class="voucher">
+        <view class="upload" wx:if="{{imgs.credit_code_image}}">
+          <image src="{{imgs.credit_code_image}}" data-src="{{imgs.credit_code_image}}" data-srcs="{{[imgs.credit_code_image]}}" bindtap="previewImage" class="uploadimg"></image>
+          <image src="../../images/close.png" data-idx="credit_code" bindtap="close" class="close"></image> 
+        </view>
+        <view class="upload" wx:if="{{imgs.credit_code_image.length==0||imgs.credit_code_image==undefined}}">
+          <image src="../../images/upload.png" bindtap="choosecredit_code" class="uploadimg"></image>
+        </view>
+      </view> 
+    </view>
+    <view class="company-item company-item2">
+      <text>开户许可证(选填)</text>
+      <view class="voucher">
+        <view class="upload" wx:if="{{imgs.account_permit_image}}">
+          <image src="{{imgs.account_permit_image}}" data-src="{{imgs.account_permit_image}}" data-srcs="{{[imgs.account_permit_image]}}" bindtap="previewImage" class="uploadimg"></image>
+          <image src="../../images/close.png" data-idx="account_permit" bindtap="close" class="close"></image> 
+        </view>
+        <view class="upload" wx:if="{{imgs.account_permit_image == undefined||imgs.account_permit_image.length==0}}">
+          <image src="../../images/upload.png" bindtap="chooseaccount_permit" class="uploadimg"></image>
+        </view>
+      </view> 
+    </view>
+  </view> 
+  <view class="btnbox">
+    <button class="next-btn" formType="submit" data-num='1'>保存</button>
+    <button class="next-btn" formType="submit" data-num='2'>下一步</button>
+  </view>
+  </form>
+</view>

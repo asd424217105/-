@@ -1,0 +1,36 @@
+<!--deviceList.wxml-->
+<!-- wetoast -->
+<import src="../../src/wetoast.wxml"/>
+<template is="wetoast" data="{{...__wetoast__}}"/>
+
+<view class="container">
+  <view class="company-item" wx:for="{{information}}" wx:for-item="item" wx:key="key" data-item="{{item}}">
+    <view class="companytime">
+      <text>{{item.name}}</text>
+      <text class="time">{{item.time}} {{item.device_name}}</text>
+    </view>
+    <text class="companyname2" wx:if="{{item.is_self==1}}">本机</text>
+    <text class="companyname" wx:if="{{item.is_self==0}}" data-token='{{item.token}}' bindtap='deleteDevice'>下线</text>
+  </view>
+
+  <view class="notitems" wx:if="{{information.length == 0}}">
+    <image src="../../images/xnothing.png"></image>
+    <view class="notmessage">暂无其他设备</view>
+  </view>
+
+   <!-- 输入登录密码弹窗 -->
+  <view class="modal-mask" bindtap="hideModal" catchtouchmove="preventTouchMove" wx:if="{{showModal}}"></view>
+  <view class="modal-dialog" wx:if="{{showModal}}">
+    <view class="modal-title">请输入登录密码</view>
+    <view class="modal-content">
+      <view class="modal-input">
+        <input placeholder-class="input-holder" bindinput="InputVal" value='{{inputval}}' class="input" placeholder="请输入登录密码"></input>
+      </view>
+    </view>
+    <view class="modal-footer">
+      <view class="btn-cancel" bindtap="onCancel" data-status="cancel">取消</view>
+      <view class="btn-confirm" bindtap="onConfirm" data-status="confirm">确定</view>
+    </view>
+  </view>
+
+</view>

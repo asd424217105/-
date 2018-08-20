@@ -1,0 +1,10 @@
+<!-- pages/news-details/news-details.html -->
+<!-- wetoast -->
+<import src="../../src/wetoast.wxml"/>
+<template is="wetoast" data="{{...__wetoast__}}"/>
+
+<view class="container">
+  <view class='news-title'>{{newsitem.title}}</view>
+  <view class='news-body'>{{newsitem.body}}</view>
+  <view class='news-date'>{{newsitem.date}}</view>
+</view>

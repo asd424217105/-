@@ -1,0 +1,21 @@
+<!--ph-notcompleted.wxml-->
+
+<!-- wetoast -->
+<import src="../../src/wetoast.wxml"/>
+<template is="wetoast" data="{{...__wetoast__}}"/>
+
+<view class="container">
+  <view class="news-box">
+    <view class="touch-item {{item.isTouchMove ? 'touch-move-active' : ''}}" data-item="{{item}}" catchtap="skip" data-index="{{index}}" bindtouchstart="touchstart" bindtouchmove="touchmove" wx:for="{{items}}" wx:for-item="item" wx:key="key">
+      <view class="content">
+        <text class="news-message">{{item.name}}</text>
+        <text class="news-time">{{item.time}}</text>
+      </view>
+      <view class="del" catchtap="del" data-item="{{item}}" data-index="{{index}}">删除</view>
+    </view>
+  </view> 
+  <view class="notitems" wx:if="{{items.length == 0}}">
+    <image src="../../images/notcomplete.png"></image>
+    <view class="notmessage">无未完成普惠企业</view>
+  </view>
+</view> 

@@ -1,0 +1,282 @@
+/**index.wxss**/
+/* 功能栏目 */
+.gongneng{
+  background-color: #0077C1;
+  width: 100%;
+  height: 180rpx;
+  display: flex;
+  flex-wrap: wrap;
+}
+.gongneng2{
+  background-color: #ffffff;
+}
+.gongnengbox{
+  width: 25%;
+  height: 180rpx;
+}
+.gongnengboxs{
+  height: 180rpx;
+  display: flex;
+  align-items:center;
+  flex-direction: column;
+}
+.gongnengbox navigator{
+  height: 180rpx;
+  display: flex;
+  align-items:center;
+  flex-direction: column;
+}
+.gongnengbox image{
+  margin-top: 22rpx;
+  margin-bottom: 20rpx;
+  width: 64rpx;
+  height: 64rpx;
+}
+.gongneng text{
+  color: #ffffff;
+  font-size: 30rpx;
+}
+.gongneng2 text{
+  color: #000000;
+  font-size: 30rpx;
+}
+/* 公司小提示 */
+.tips{
+  display: flex;
+  justify-content: space-between ;
+  align-items: center;
+  width: 100%;
+  height: 70rpx;
+  box-sizing: border-box;
+  padding-left: 20rpx;
+  padding-right: 20rpx;
+  margin-bottom: 40rpx;
+  font-size: 26rpx;
+  border-top: 1rpx solid #E6E6E6;
+  background-color: #ffffff;
+}
+.tipbox1 {
+  display: flex;
+  align-items: center;
+}
+.tipbox1 image{
+  width: 30rpx;
+  height: 26rpx;
+  margin-right: 20rpx;
+}
+.tipbox1 text{
+  width: 520rpx;
+  line-height: 70rpx;
+  overflow: hidden;
+  white-space:nowrap; 
+  text-overflow:ellipsis;
+}
+.tipbox2{
+  color: #989898;
+  display: flex;
+}
+.tipbox2 navigator{
+  margin-left: 18rpx;
+}
+.tipsmore{
+  margin-left: 12rpx;
+}
+/* 任务提示 */
+ .messagebox{
+  margin-bottom: 40rpx;
+  background-color: #fff;
+  width: 100%;
+  height: 180rpx;
+  display: flex;
+}
+.messagebox view{
+  width:33.33%;
+  height: 180rpx;
+  display: flex;
+  align-items:center;
+  flex-direction: column;
+}
+.messagebox-top{
+  color: #000000;
+  font-size: 34rpx;
+  margin-top: 40rpx;
+  margin-bottom: 30rpx;
+}
+.messagebox-bootom{
+  color: #666666;
+  font-size: 30rpx;
+}
+.tipbox view{
+  width: 25%;
+}
+.tipbox .messagebox-top{
+  border: 1rpx solid #cccccc;
+  border-radius: 10rpx;
+  padding:0rpx 10rpx;
+} 
+
+/* 事业合伙人排名 */
+.listbox{
+  width: 100%;
+  border-bottom: 1rpx solid #E6E6E6;
+  background: #ffffff;
+}
+.ranking-title{
+  width: 100%;
+  color: #000000;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  padding: 20rpx 20rpx 10rpx 20rpx;
+}
+.ranking-title image{
+  width: 32rpx;
+  height: 32rpx;
+  margin-right: 20rpx;
+}
+.ranking-yes{
+  padding-left: 20rpx;
+  padding-right: 20rpx; 
+}
+.ranking-list{
+  display: flex;
+  align-items: center;
+  height: 80rpx;
+  color: #666666;
+  font-size: 28rpx;
+}
+.ranking-list .number{
+  width: 32rpx;
+  margin-right: 20rpx;
+  text-align: center;
+  font-size: 32rpx;
+}
+.ranking-list .ranking-message{
+  width: 100%;
+  height: 80rpx;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1rpx solid #E6E6E6;
+}
+.ranking-message .message{
+  width: 480rpx;
+  overflow: hidden;
+  white-space:nowrap; 
+  text-overflow:ellipsis;
+}
+.ranking-list:nth-child(1) .number,
+.ranking-list:nth-child(2) .number,
+.ranking-list:nth-child(3) .number{
+  color: #EE8501;
+}
+.ranking-list:nth-child(1) .ranking-message .money,
+.ranking-list:nth-child(2) .ranking-message .money,
+.ranking-list:nth-child(3) .ranking-message .money{
+  color: #EE8501;
+}
+.loadmany{
+  height: 70rpx;
+  width: 100%;
+  color: #009aff;
+  font-size: 30rpx;
+  line-height: 70rpx;
+  text-align: center;  
+}
+.ranking-no{
+  padding-top: 40rpx;
+  padding-bottom: 40rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center ;
+}
+.ranking-no image{
+  width: 190rpx;
+  height: 148rpx;
+  margin-bottom: 30rpx;
+}
+.ranking-no{
+  color: #999999;
+  font-size: 30rpx;
+}
+.index-tips{
+  text-align: center;
+  height: 63rpx;
+  line-height: 63rpx;
+  color: #999;
+  font-size: 26rpx;
+}
+
+
+/* 营业执照号弹窗 */
+.modal-mask {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: #000;
+  opacity: 0.5;
+  overflow: hidden;
+  z-index: 9000;
+  color: #fff;
+}
+.modal-dialog {
+  width: 540rpx;
+  overflow: hidden;
+  position: fixed;
+  top: 50%;
+  left: 0;
+  z-index: 9999;
+  background: #f9f9f9;
+  margin: -180rpx 105rpx;
+  border-radius: 36rpx;
+}
+.modal-title {
+  padding-top: 50rpx;
+  font-size: 36rpx;
+  color: #030303;
+  text-align: center;
+}
+.modal-content {
+  padding: 50rpx 32rpx;
+}
+.modal-input {
+  display: flex;
+  background: #fff;
+  border: 2rpx solid #ddd;
+  border-radius: 4rpx;
+  font-size: 28rpx;
+}
+.input {
+  width: 100%;
+  height: 82rpx;
+  font-size: 28rpx;
+  line-height: 28rpx;
+  padding: 0 20rpx;
+  box-sizing: border-box;
+  color: #333;
+}
+input-holder {
+  color: #666;
+  font-size: 28rpx;
+}
+.modal-footer {
+  display: flex;
+  flex-direction: row;
+  height: 86rpx;
+  border-top: 1px solid #dedede;
+  font-size: 34rpx;
+  line-height: 86rpx;
+}
+.btn-cancel {
+  width: 50%;
+  color: #666;
+  text-align: center;
+  border-right: 1px solid #dedede;
+}
+.btn-confirm {
+  width: 50%;
+  color: #ec5300;
+  text-align: center;
+}

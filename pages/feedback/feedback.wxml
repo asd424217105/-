@@ -1,0 +1,23 @@
+<!--pay.wxml-->
+<!-- wetoast -->
+<import src="../../src/wetoast.wxml"/>
+<template is="wetoast" data="{{...__wetoast__}}"/>
+
+<view class="container">
+  <view class="section">
+    <textarea bindblur="bindTextAreaBlur" auto-height placeholder="请输入10个以上的问题反馈" placeholder-style="color:#ccc;font-size:30rpx;" class="textarea"/>
+  </view>
+  <view class="voucher-box">
+    <view class="voucher-title">图片（选填、提供问题截图）</view>
+    <view class="voucher">
+      <view class="upload" wx:for="{{arr_imgsrc}}" wx:for-item="imgsrc" wx:for-index="idx" wx:key="key">
+        <image src="{{imgsrc}}" data-src="{{imgsrc}}" bindtap="previewImage" class="uploadimg"></image>
+        <image src="../../images/close.png" data-idx="{{idx}}" bindtap="close" class="close"></image>
+      </view>
+      <view class="upload">
+        <image src="../../images/upload.png" bindtap="chooseImageTap" class="uploadimg"></image>
+      </view>
+    </view>
+  </view>
+  <button class="tj-btn" bindtap="tijiao">提交</button>
+</view>

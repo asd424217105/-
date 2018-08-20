@@ -1,0 +1,31 @@
+<!--login.wxml-->
+<!-- wetoast -->
+<import src="../../src/wetoast.wxml"/>
+<template is="wetoast" data="{{...__wetoast__}}"/>
+
+<view class="container">
+  <view class="logo">
+    <image src="../../images/logo.png"></image>
+  </view>
+  <view class="login">
+    <!-- 账号 -->
+    <view class="login-text">
+      <image src="../../images/account.png"></image>
+      <input type="text" bindinput="userNameInput"/>
+    </view>
+    <!-- 密码 -->
+    <view class="login-text">
+      <image src="../../images/password.png" class="imgpassword"></image>
+      <input type="text" password bindinput="userPasswordInput"/>
+    </view>
+    <!-- 身份单选框 -->
+    <radio-group class="radio-group" bindchange="radioChange">
+      <label class="radio" wx:for="{{items}}" wx:key="key">
+        <radio value="{{item.name}}" checked="{{item.checked}}"/>{{item.value}}
+      </label>
+    </radio-group>
+     <button class="login-btn" bindtap="tapName">登录</button> 
+
+  </view>
+  <button class="login-tel" bindtap="tel">紧急联系人</button>
+</view>

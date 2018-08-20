@@ -1,0 +1,135 @@
+<!--newuesrtwo.wxml-->
+
+<!-- wetoast -->
+<import src="../../src/wetoast.wxml"/>
+<template is="wetoast" data="{{...__wetoast__}}"/>
+
+<view class="container">
+  <form bindsubmit="formSubmit">
+  <view class="company-box">
+    <view class="company-item">
+      <text>联系人</text>
+      <input type="text" placeholder="请输入联系人" value='{{res_msg.contacts}}' placeholder-style="color:#cccccc" name="contacts"/>
+    </view>
+    <view class="company-item">
+      <text>联系人岗位</text>
+      <input type="text" placeholder="请输入联系人岗位" value='{{res_msg.contact_title}}' placeholder-style="color:#cccccc" name="contact_title"/> 
+    </view>
+    <view class="company-item">
+      <text>联系人手机号</text>
+      <input type="text" placeholder="请输入手机号" value='{{res_msg.contact_phone}}' placeholder-style="color:#cccccc" bindinput="telInput" name="contact_phone"/> 
+    </view>
+    <view class="company-item">
+      <text>手机验证码</text>
+      <view class="testcode-box">
+        <input type="text" class="w200" placeholder="请输入验证码" placeholder-style="color:#cccccc" name="verify_code" type='number'/>
+        <text class="testcode" bindtap="testcode" wx:if="{{resetCode==1}}">获取验证码</text>
+        <text class="testcode" wx:if="{{resetCode!=1}}">{{second}}s后重新获取</text>
+      </view>
+    </view>
+    <!-- 行业 -->
+    <view class="company-item">
+      <text>行业</text>
+      <picker mode="selector" value="{{index}}" range="{{top_category_arr}}" range-key="{{'name'}}" bindchange="topCategoryChange">
+        <view class="picker" wx:if="{{top_category_name ==''}}" style='color:#ccc'>请选择主行业</view>
+        <view class="picker" wx:if="{{top_category_name !=''}}">{{top_category_name}}</view>
+      </picker> 
+    </view>
+     <view class="company-item">
+     <text>子行业</text>
+      <text bindtap='subCategoryChange'>{{sub_category_name}}</text>
+    </view>
+     <!-- 子行业弹窗 -->
+    <view class="modal-mask" bindtap="hideModal" catchtouchmove="preventTouchMove" wx:if="{{showModal}}"></view>
+    <view class="modal-dialog" wx:if="{{showModal}}">
+      <view class="modal-title">选择子行业</view>
+      <view class="modal-content">
+        <view class='modal-item' wx:for="{{sub_category_arr}}" wx:for-item="item" wx:key="key" bindtap='bindsubcategory' data-idx='{{index}}'>{{item.name}}</view>
+      </view>
+    </view>
+  </view>
+ 
+  <!-- 上传身份证照片 -->
+  <view class="company-box">
+    <view class="company-item company-item2">
+      <text>法人身份证正面</text>
+      <view class="voucher">
+        <view class="upload" wx:if="{{imgs.idcard_up_image}}">
+          <image src="{{imgs.idcard_up_image}}" data-src="{{imgs.idcard_up_image}}" data-srcs="{{[imgs.idcard_up_image]}}" bindtap="previewImage" class="uploadimg"></image>
+          <image src="../../images/close.png" data-idx="idcard_up" bindtap="close" class="close"></image> 
+        </view>
+        <view class="upload" wx:if="{{imgs.idcard_up_image == undefined||imgs.idcard_up_image.length==0}}">
+          <image src="../../images/upload.png" bindtap="chooseidcard_up" class="uploadimg"></image>
+        </view>
+        <view class="upload2">
+          <image src="../../images/sm.png" bindtap="ocridcard_up" class="uploadimg"></image>
+        </view>
+      </view> 
+    </view>
+    <view class="company-item company-item2">
+      <text>法人身份证背面</text>
+      <view class="voucher">
+        <view class="upload" wx:if="{{imgs.idcard_down_image}}">
+          <image src="{{imgs.idcard_down_image}}" data-src="{{imgs.idcard_down_image}}" data-srcs="{{[imgs.idcard_down_image]}}" bindtap="previewImage" class="uploadimg"></image>
+          <image src="../../images/close.png" data-idx="idcard_down" bindtap="close" class="close"></image> 
+        </view>
+        <view class="upload" wx:if="{{imgs.idcard_down_image == undefined||imgs.idcard_down_image.length==0}}">
+          <image src="../../images/upload.png" bindtap="chooseidcard_down" class="uploadimg"></image>
+        </view>
+      </view> 
+    </view>
+    <view class="company-item company-item2">
+      <text>法人手持身份证</text>
+      <view class="voucher">
+        <view class="upload" wx:if="{{imgs.photo_image}}">
+          <image src="{{imgs.photo_image}}" data-src="{{imgs.photo_image}}" data-srcs="{{[imgs.photo_image]}}" bindtap="previewImage" class="uploadimg"></image>
+          <image src="../../images/close.png" data-idx="photo" bindtap="close" class="close"></image> 
+        </view>
+        <view class="upload" wx:if="{{imgs.photo_image == undefined||imgs.photo_image.length==0}}">
+          <image src="../../images/upload.png" bindtap="choosephoto" class="uploadimg"></image>
+        </view>
+      </view> 
+    </view>
+    <view class="company-item">
+      <text>法人身份证号</text>
+      <input type="text" placeholder="请输入法人身份证号" placeholder-style="color:#cccccc" value='{{idcard || res_msg.idcard}}' name="idcard" />
+    </view>
+  </view>
+  <!-- 上传门头照片 -->
+  <view class="company-box">
+    <view class="company-item company-item2">
+      <text>门头照片(选填)</text>
+      <view class="voucher">
+        <view class="upload" wx:if="{{imgs.shop_img_image}}">
+          <image src="{{imgs.shop_img_image}}" data-src="{{imgs.shop_img_image}}" data-srcs="{{[imgs.shop_img_image]}}" bindtap="previewImage" class="uploadimg"></image>
+          <image src="../../images/close.png" data-idx="shop_img" bindtap="close" class="close"></image> 
+        </view>
+        <view class="upload" wx:if="{{imgs.shop_img_image == undefined||imgs.shop_img_image.length==0}}">
+          <image src="../../images/upload.png" bindtap="chooseshop_img" class="uploadimg"></image>
+        </view>
+      </view> 
+    </view>
+  </view>
+  <!-- 邮政编码 -->
+  <view class="company-box">
+    <view class="company-item">
+      <text>邮政编码</text>
+      <input type="text" placeholder="请输入邮政编码" placeholder-style="color:#cccccc" value='{{res_msg.zipcode}}' name="zipcode"/>
+    </view>
+  </view>  
+  <view class="company-box">
+    <view class="company-item">
+      <text>推荐人或企业</text>
+      <picker mode="selector" value="{{index}}" range="{{recommend_arr}}" range-key="{{'name'}}" bindchange="recommendChange">
+        <view class="picker" wx:if="{{recommend ==''}}" style='color:#ccc'>请输入推荐人或企业（选填）</view>
+        <view class="picker" wx:if="{{recommend !=''}}">{{recommend}}</view>
+      </picker> 
+    </view>
+  </view>  
+  <!-- 提交按钮 -->
+  <view class="btnbox">
+    <button class="next-btn" formType="submit" data-num='1'>保存</button>
+    <button class="next-btn" formType="submit" data-num='2'>下一步</button>
+  </view>
+  </form>
+</view>

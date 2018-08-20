@@ -1,0 +1,70 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/ph-reject/ph-reject",
+    "pages/login/login",
+    "pages/ph-newuserone/ph-newuserone",
+    "pages/ph-newusertwo/ph-newusertwo",
+    "pages/newusertwo/newusertwo",
+    "pages/paytwo/paytwo",
+    "pages/newuserone/newuserone",
+    "pages/auditlist/auditlist",
+    "pages/newuserend/newuserend",
+    "pages/deviceList/deviceList",
+    "pages/rankinglist/rankinglist",
+    "pages/manualinput/manualinput",
+    "pages/manualinput-preview/manualinput-preview",
+    "pages/ph-newuserend/ph-newuserend",
+    "pages/application/application",
+    "pages/ph-newuser/ph-newuser",
+    "pages/ph-notcompleted/ph-notcompleted",
+    "pages/apply/apply",
+    "pages/newuser/newuser",
+    "pages/notcompleted/notcompleted",
+    "pages/paymentlist/paymentlist",
+    "pages/news/news",
+    "pages/news-details/news-details",
+    "pages/payment-applylist/payment-applylist",
+    "pages/pay/pay",
+    "pages/feedback/feedback",
+    "pages/modify-pwd/modify-pwd",
+    "pages/personal/personal",
+    "pages/information/information",
+    "pages/followlist/followlist",
+    "pages/ph-list/ph-list",
+    "pages/recordlist/recordlist",
+    "pages/record/record",
+    "pages/ph-recordlist/ph-recordlist"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#0077C1",
+    "navigationBarTitleText": "企业服务",
+    "navigationBarTextStyle": "#fff"
+  },
+  "tabBar": {
+    "color": "#000",
+    "selectedColor": "#009bff",
+    "backgroundColor": "#fff",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "iconPath": "images/home.png",
+        "selectedIconPath": "images/home1.png",
+        "text": "首页"
+      },
+      {
+        "pagePath": "pages/news/news",
+        "iconPath": "images/news.png",
+        "selectedIconPath": "images/news1.png",
+        "text": "消息"
+      },
+      {
+        "pagePath": "pages/personal/personal",
+        "iconPath": "images/personal.png",
+        "selectedIconPath": "images/personal1.png",
+        "text": "我的"
+      }
+    ]
+  }
+}

@@ -1,0 +1,33 @@
+<!--news.wxml-->
+
+<!-- wetoast -->
+<import src="../../src/wetoast.wxml"/>
+<template is="wetoast" data="{{...__wetoast__}}"/>
+
+<view class="body">
+  <view class="nav bc_white">
+    <view class="navbox {{selected?'red':'default'}}" bindtap="selected">提醒</view>
+    <view class="navbox {{selected?'default':'red'}}" bindtap="selected1">系统消息</view>
+  </view>
+  <view class="show">
+    <view class="container" bindtouchstart="touchstart" bindtouchmove="touchmove" bindtap='newsDetails' data-item='{{item}}' wx:for="{{items}}" wx:key="item.id" data-index="{{index}}">
+      <view class="touch-item {{item.isTouchMove ? 'touch-move-active' : ''}}">
+        <view class="content">
+          <view class="item-message">
+            <view class="bodys">
+              {{item.body}}
+            </view>
+            <text class='redtip' wx:if="{{item.status==1}}"></text>
+          </view>
+          <view class="date">{{item.time}}</view>
+        </view>
+        <view class="del" catchtap="del" data-index="{{index}}" id="{{item.id}}">删除</view>
+      </view>
+    </view>
+    <!-- 无此审核状态企业样式 -->
+    <view class="notitems" wx:if="{{items.length == 0}}">
+      <image src="../../images/xnothing.png"></image>
+      <view class="notmessage">暂无此消息</view>
+    </view>
+  </view>
+</view>

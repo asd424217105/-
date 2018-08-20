@@ -1,0 +1,39 @@
+<!--pages/auditlist/auditlist.wxml-->
+<!-- wetoast -->
+<import src="../../src/wetoast.wxml"/>
+<template is="wetoast" data="{{...__wetoast__}}"/>
+
+<view class="container">
+  <!-- 导航栏 -->
+  <view class="nav">
+    <view>企业名称</view>
+    <view>提交日期</view>
+    <view>审核日期</view>
+    <view class='nav-status' bindtap="statusboxblock">审核状态<text class="triangle"></text></view>
+  </view>
+  <!-- 状态盒子 -->
+  <view class="statusbox"  animation="{{animationData}}">
+    <view bindtap="onPickHeaderClick" data-id="0" class="{{id==0?'blue':''}}">所有</view>
+    <view bindtap="onPickHeaderClick" data-id="1" class="{{id==1?'blue':''}}">未核实</view>
+    <view bindtap="onPickHeaderClick" data-id="2" class="{{id==2?'blue':''}}">未通过</view>
+    <view bindtap="onPickHeaderClick" data-id="3" class="{{id==3?'blue':''}}">通过</view>
+    <view bindtap="onPickHeaderClick" data-id="4" class="{{id==4?'blue':''}}">已撤销</view>
+  </view>
+  <!-- 信息列表 -->
+  <view class="item-box" wx:for="{{information}}" wx:for-item="item" wx:key="key" data-item="{{item}}" bindtap='skip'>
+    <view class="company-item">
+      <view>{{item.name}}</view>
+      <view>{{item.apply_time}}</view>
+      <view wx:if="{{item.verify_time != ''}}">{{item.verify_time}}</view>
+      <view wx:if="{{item.verify_time == ''}}">---</view>
+      <view class="companystatus {{item.status==1?'yellow':''}} {{item.status==2?'red':''}} {{item.status==4?'gary':''}}">{{item.status_name}}</view>
+    </view>
+    <view class="remark" wx:if="{{item.status==2&&item.remark!=''}}">驳回理由：{{item.remark}}</view>
+  </view>
+  <!-- 无此审核状态企业样式 -->
+  <view class="notitems" wx:if="{{information.length == 0}}">
+    <image src="../../images/xnothing.png"></image>
+    <view class="notmessage">暂无此审核状态企业</view>
+  </view>
+</view>
+

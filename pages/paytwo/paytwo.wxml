@@ -1,0 +1,117 @@
+<!--newuserthree.wxml-->
+<!-- wetoast -->
+<import src="../../src/wetoast.wxml"/>
+<template is="wetoast" data="{{...__wetoast__}}"/>
+
+<view class="container">
+  <form bindsubmit="formSubmit">
+    <view class="company-box">
+      <view class="company-item">
+        <text>银行卡类型</text>
+        <view class="xingzhi">
+          <text data-num="1" class="{{_num==1?'cur':''}}" bindtap="menuClick">对公账户</text>
+          <text data-num="2" class="{{_num==2?'cur':''}}" bindtap="menuClick">个人账户</text>
+        </view>
+      </view>
+    </view>
+    <view class="company-box">
+      <view class="company-item company-item2">
+        <text>银行卡</text>
+        <view class="voucher">
+          <view class="upload" wx:if="{{imgs.bankcard_photo_image}}">
+            <image src="{{imgs.bankcard_photo_image}}" data-src="{{imgs.bankcard_photo_image}}" data-srcs="{{imgs.bankcard_photo_image}}" bindtap="previewImage" class="uploadimg"></image>
+            <image src="../../images/close.png" data-idx="bankcard_photo" bindtap="close" class="close"></image>
+          </view>
+          <view class="upload" wx:if="{{imgs.bankcard_photo_image.length==0||imgs.bankcard_photo_image==undefined}}">
+            <image src="../../images/upload.png" bindtap="choosebankcard_photo" class="uploadimg"></image>
+          </view>
+          <view class="upload2">
+            <image src="../../images/sm.png" bindtap="ocrbankcard_photo" class="uploadimg"></image>
+          </view>
+        </view>
+      </view>
+      <view class="company-item">
+        <text>所属银行</text>
+        <picker bindchange="bankChange" class="name" value="{{index}}" range="{{banks}}" range-key="{{'bank_name'}}">
+          <view class="picker" wx:if="{{bank == ''}}" style='color:#ccc'>请选择所属银行</view>
+          <view class="picker" wx:if="{{bank != ''}}">{{bank}}</view>
+        </picker>
+      </view>
+      <view class="company-item">
+        <text>开户人</text>
+        <input type="text" value='{{account}}' placeholder="请输入开户人" placeholder-style="color:#cccccc" name="account" />
+      </view>
+      <view class="company-item">
+        <text>银行卡号</text>
+        <input type="text" value='{{bankcard}}' placeholder="请输入银行卡号" type="number" placeholder-style="color:#cccccc" name="number" />
+      </view>
+
+    <!-- 地址选择器 -->
+    <view class='company-item'>
+      <text>开户行地址</text>
+      <picker mode="multiSelector" data-bank='upbank' bindchange="bindPickerChange" bindcolumnchange="bindColumnChange" range="{{multiArray}}" value="{{multiIndex}}" range-key="{{'name'}}" >
+        <view class="picker" wx:if="{{province_name == ''}}" style='color:#ccc'>请选择开户行地址</view>
+        <view class="picker" wx:if="{{province_name != ''}}">{{province_name}}{{city_name}}</view>
+      </picker>
+    </view>
+
+      <view class="company-item">
+        <text>开户行名称</text>
+        <input type="text" value='{{address}}' placeholder="请输入开户行名称" placeholder-style="color:#cccccc" name="address" />
+      </view>
+    </view>
+
+    <view class="company-box">
+      <view class="company-item">
+        <text>绩效银行卡 （本卡为绩效奖金发放银行卡）</text>
+      </view>
+      <view class="company-item company-item2">
+        <text>银行卡</text>
+        <view class="voucher">
+          <view class="upload" wx:if="{{imgs.work_bankcard_photo_image}}">
+            <image src="{{imgs.work_bankcard_photo_image}}" data-src="{{imgs.work_bankcard_photo_image}}" data-srcs="{{[imgs.work_bankcard_photo_image]}}" bindtap="previewImage" class="uploadimg"></image>
+            <image src="../../images/close.png" data-idx="work_bankcard_photo" bindtap="close" class="close"></image>
+          </view>
+          <view class="upload" wx:if="{{imgs.work_bankcard_photo_image.length==0||imgs.work_bankcard_photo_image==undefined}}">
+            <image src="../../images/upload.png" bindtap="choosework_bankcard_photo" class="uploadimg"></image>
+          </view>
+           <view class="upload2">
+            <image src="../../images/sm.png" bindtap="ocrworkbankcard_photo" class="uploadimg"></image>
+          </view>
+        </view>
+      </view>
+      <view class="company-item">
+        <text>所属银行</text>
+        <picker bindchange="bank2Change" class="name" value="{{index}}" range="{{work_banks}}" range-key="{{'bank_name'}}">
+          <view class="picker" wx:if="{{work_bank == ''}}" style='color:#ccc'>请选择所属银行</view>
+          <view class="picker" wx:if="{{work_bank != ''}}">{{work_bank}}</view>
+        </picker>
+      </view>
+      <view class="company-item">
+        <text>开户人</text>
+        <input type="text" value='{{work_account}}' placeholder="请输入开户人" placeholder-style="color:#cccccc" name="work_account"/>
+      </view>
+      <view class="company-item">
+        <text>银行卡号</text>
+        <input type="text" value='{{work_bankcard}}' type="number" placeholder="请输入银行卡号" placeholder-style="color:#cccccc" name="work_number" />
+      </view>
+
+    <!-- 地址选择器 -->
+    <view class='company-item'>
+      <text>开户行地址</text>
+      <picker mode="multiSelector" data-bank='downbank' bindchange="bindPickerChange" bindcolumnchange="bindColumnChange" range="{{multiArray}}" value="{{multiIndex}}" range-key="{{'name'}}">
+        <view class="picker" wx:if="{{province_name2 == ''}}" style='color:#ccc'>请选择开户行地址</view>
+        <view class="picker" wx:if="{{province_name2 != ''}}">{{province_name2}}{{city_name2}}</view>
+      </picker>
+    </view>
+
+      <view class="company-item">
+        <text>开户行名称</text>
+        <input type="text" value='{{work_address}}' placeholder="请输入开户行名称" placeholder-style="color:#cccccc" name="work_address" />
+      </view>
+    </view>
+    <view class="btnbox">
+      <button class="next-btn" formType="submit">提交</button>
+    </view>
+  </form>
+</view>

@@ -1,0 +1,129 @@
+/* ph-newuesrone.css */
+.company-box{
+  width: 100%;
+  box-sizing: border-box;
+  padding-left: 24rpx;
+  padding-right: 24rpx;
+  background-color: #ffffff;
+  margin-top: 40rpx;
+}
+.company-item{
+  width: 100%;
+  display: flex;
+  align-items:center;
+  justify-content: space-between;
+  height: 100rpx;
+  border-bottom: 1rpx solid #cccccc;
+}
+.company-item2{
+  width: 100%;
+  display: flex;
+  align-items:center; 
+  justify-content: space-between;
+  padding-top: 20rpx;
+  padding-bottom: 20rpx;
+}
+.company-item3{
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: 15rpx 0;
+}
+.companyname{
+  color: #333333;
+  font-size: 28rpx;
+}
+.company-item input{
+  text-align: right;
+  font-size: 28rpx;
+  width: 450rpx;
+}
+.company-item2 text:nth-child(2){
+  text-align: right;
+  font-size: 28rpx;
+  width: 450rpx;
+  color: #999999;
+}
+/* 验证码 */
+.testcode-box{
+  display: flex;
+  align-items:center;
+}
+.company-item .w200{
+  width: 250rpx;
+}
+.testcode{
+  width: 150rpx;
+  height: 60rpx;
+  background-color: #E6E6E6;
+  border-radius: 20rpx;
+  font-size: 22rpx;
+  color: #666666;
+  line-height: 60rpx;
+  margin-left: 40rpx;
+  text-align: center;
+}
+/* 性别 */
+.xingzhi text{
+  width: 140rpx;
+  height: 50rpx;
+  line-height: 50rpx;
+  color: #ffffff;
+  background-color: #CCCCCC;  
+  border-radius: 8rpx;
+  margin-left: 25rpx;
+  float: left;
+  font-size: 24rpx;
+  text-align: center;
+}
+.xingzhi .cur{
+  background-color: #0077C1; 
+}
+/* 经营项目 */
+.company-item3 text{
+  padding-top: 15rpx;
+}
+.company-item3 textarea{
+  width: 487rpx;
+  min-height: 200rpx;
+}
+/* 上传照片栏目 */
+.voucher{
+  display: flex;
+  flex-wrap: wrap ;
+}
+.upload{
+  width: 90rpx;
+  height: 90rpx;
+  align-items:center;
+  border: 1rpx dashed #CBCBCB;
+  margin-left: 20rpx; 
+  position: relative;
+}
+.uploadimg{
+  width: 90rpx;
+  height: 90rpx;
+}
+.close{
+  width: 44rpx;
+  height: 44rpx;
+  position: absolute;
+  top: -14rpx;
+  right: -14rpx;
+}
+/* 按钮 */
+.btnbox{
+  display: flex;
+  margin-top: 500rpx;
+}
+.next-btn{
+  font-size: 34rpx;
+  margin-top: 50rpx;
+  margin-bottom: 44rpx;
+  width: 270rpx;
+  height: 70rpx;
+  line-height: 70rpx;
+  background-color: #0077c1;
+  color: #ffffff;
+  border-radius: 35rpx;
+}

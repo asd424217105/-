@@ -1,0 +1,38 @@
+<!--personal.wxml-->
+
+<!-- wetoast -->
+<import src="../../src/wetoast.wxml"/>
+<template is="wetoast" data="{{...__wetoast__}}"/>
+
+<view class="container">
+  <view class="personal" bindtap="setinformation">
+    <image src="{{headimg}}" class="headimg" ></image>
+    <view class="message">
+      <text class="name">{{name}}</text>
+    </view>
+  </view>
+  <view class="setitem" bindtap="modifyPassword">
+    <view class="setbox">
+      <image src="../../images/feedback@3x.png" class="smallicon pass"></image>
+      <text class="setword">修改密码</text>
+    </view>
+  </view>
+  <view class="setitem" bindtap="customerFeedbackFn">
+        <view class="setbox" >
+          <image src="../../images/modify.png" class="smallicon pass"></image>
+          <text class="setword">用户反馈</text>
+        </view>
+      </view>
+  <view class="setitem" bindtap="getDeviceList">
+        <view class="setbox" >
+          <image src="../../images/device.png" class="smallicon pass"></image>
+          <text class="setword">设备信息</text>
+        </view>
+      </view>    
+  <view class="setitem mt40"  bindtap="lgout">
+    <view class="setbox">
+      <image src="../../images/out.png" class="smallicon"></image>
+      <text class="setword">退出登录</text>
+    </view>
+  </view>
+</view>

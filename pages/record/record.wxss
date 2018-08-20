@@ -1,0 +1,179 @@
+/* newuesrone.css */
+.company-box{
+  width: 100%;
+  box-sizing: border-box;
+  padding-left: 24rpx;
+  padding-right: 24rpx;
+  background-color: #ffffff;
+  margin-bottom: 40rpx;
+}
+.company-item0{
+  width: 100%;
+  display: flex;
+  align-items:center;
+  height: 70rpx;
+  border-bottom: 1rpx solid #cccccc;
+  color: #EE0000;
+  font-size: 26rpx;
+  padding-left: 20rpx;
+  padding-right: 20rpx;
+  background-color: #ccc;
+  box-sizing: border-box;
+}
+.company-item{
+  width: 100%;
+  display: flex;
+  align-items:center;
+  justify-content: space-between;
+  height: 100rpx;
+  border-bottom: 1rpx solid #cccccc;
+}
+.company-item3{
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: 15rpx 0;
+}
+.companyname{
+  color: #333333;
+  font-size: 28rpx;
+}
+.company-item input{
+  text-align: right;
+  font-size: 28rpx;
+  width: 450rpx;
+}
+/* 企业性质 */
+.xingzhi text{
+  width: 140rpx;
+  height: 50rpx;
+  line-height: 50rpx;
+  color: #ffffff;
+  background-color: #CCCCCC;  
+  border-radius: 8rpx;
+  margin-left: 25rpx;
+  float: left;
+  font-size: 24rpx;
+  text-align: center;
+}
+.xingzhi .cur{
+  background-color: #0077C1; 
+}
+/* 营业期限 */
+.classname{
+  margin-left: -100rpx;
+  margin-right: -100rpx
+}
+/* 经营范围 */
+.company-item3 text{
+  padding-top: 15rpx;
+}
+.company-item3>view{
+  padding-top: 15rpx;
+}
+.company-item3 textarea{
+  width: 487rpx;
+  min-height: 200rpx;
+}
+.company-item3 .ocr-btn{
+  color: #0077C1;
+  border: 1rpx solid #0077C1;
+  border-radius: 10rpx;
+  padding: 5rpx;
+  font-size: 24rpx;
+  margin-top: 10rpx;
+  text-align: center;
+  margin-left: -3rpx;
+}
+/* 上传照片栏目 */
+.voucher{
+  display: flex;
+  flex-wrap: wrap ;
+}
+.upload{
+  width: 90rpx;
+  height: 90rpx;
+  align-items:center;
+  border: 1rpx dashed #CBCBCB;
+  margin-left: 20rpx; 
+  position: relative;
+}
+.uploadimg{
+  width: 90rpx;
+  height: 90rpx;
+}
+.close{
+  width: 44rpx;
+  height: 44rpx;
+  position: absolute;
+  top: -14rpx;
+  right: -14rpx;
+}
+/* 按钮 */
+.btnbox{
+  display: flex;
+}
+.next-btn{
+  font-size: 34rpx;
+  margin-top: 10rpx;
+  margin-bottom: 44rpx;
+  width: 600rpx;
+  height: 70rpx;
+  line-height: 70rpx;
+  background-color: #0077c1;
+  color: #ffffff;
+  border-radius: 35rpx;
+}
+
+/* 营业执照号弹窗 */
+.modal-mask {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: #000;
+  opacity: 0.5;
+  overflow: hidden;
+  z-index: 9000;
+  color: #fff;
+}
+.modal-dialog {
+  width: 100%;
+  height: 80%;
+  overflow: hidden;
+  position: fixed;
+  top: 100rpx;
+  left: 0;
+  z-index: 9999;
+  background: #f9f9f9;
+  overflow-y:scroll;
+  box-shadow: 0rpx 0rpx 40rpx rgba(0, 0, 0, 0.6) inset;
+}
+.modal-title {
+  padding-top: 20rpx;
+  font-size: 32rpx;
+  color: #030303;
+  text-align: center;
+}
+.modal-content {
+  padding: 30rpx 0rpx;
+}
+.modal-input {
+  display: flex;
+  background: #fff;
+  border: 2rpx solid #ddd;
+  border-radius: 4rpx;
+  font-size: 28rpx;
+}
+.modal-item {
+  height: 90rpx;
+  line-height: 90rpx;
+  overflow: hidden;
+  font-size: 28rpx;
+  border-top: 1rpx solid #ccc;
+  padding-left: 20rpx;
+  padding-right: 20rpx;
+}
+
+

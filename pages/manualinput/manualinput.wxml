@@ -1,0 +1,65 @@
+<!--manualinput.wxml-->
+
+<!-- wetoast -->
+<import src="../../src/wetoast.wxml"/>
+<template is="wetoast" data="{{...__wetoast__}}"/>
+
+<view class="container">
+  <form bindsubmit="formSubmit" bindreset="formReset">
+  <view class="company-box">
+    <view class="company-item">
+      <text>社会统一信用代码</text>
+      <input type="text" placeholder="请输入社会统一信用代码" value='{{licence_num}}' placeholder-style="color:#cccccc" name="licence_num"/>
+    </view>
+    <view class="company-item">
+      <text>企业名称</text>
+      <input type="text" placeholder="请输入企业名称" value='{{name}}' placeholder-style="color:#cccccc" name="name"/> 
+    </view>
+    <view class="company-item">
+      <text>法定代表人</text>
+      <input type="text" placeholder="请输入法定代表人" value='{{legal_name}}' placeholder-style="color:#cccccc" name="legal_name"/> 
+    </view>
+    <view class="company-item">
+      <text>企业性质</text>
+      <view class="xingzhi">
+        <text data-num="1" class="{{_num==1?'cur':''}}" bindtap="menuClick">有限公司</text>
+        <text data-num="2" class="{{_num==2?'cur':''}}" bindtap="menuClick">个体工商户</text>
+      </view>
+    </view>
+    <!-- 营业期限 -->
+    <view class="company-item">
+      <text>营业期限</text>
+      <picker mode="date" value="{{date1}}" bindchange="bindDateChange1">
+        <view class="picker">{{date1_word}}</view>
+      </picker>
+      <view class="classname" wx:if="{{_num==1}}">-</view>
+      <picker mode="date" value="{{date2}}" bindchange="bindDateChange2" wx:if="{{_num==1}}">
+        <view class="picker">{{date2_word}}</view>
+      </picker> 
+    </view>
+    <!-- 地址选择器 -->
+    <view class='company-item'>
+      <text>地址</text>
+      <picker mode="multiSelector" bindchange="bindPickerChange" bindcolumnchange="bindColumnChange" range="{{multiArray}}" value="{{multiIndex}}" range-key="{{'name'}}" >
+        <view class="picker">
+          {{province_name}}{{city_name}}{{area_name}}
+        </view>
+      </picker>
+    </view>
+    <!-- 详细地址 -->
+    <view class="company-item">
+      <text>详细地址</text>
+      <input type="text" placeholder="请输入详细地址" placeholder-style="color:#cccccc" value='{{address}}' name="address" />
+    </view>
+  </view>
+  <view class="company-box">
+    <view class="company-item3">
+      <text>经营范围</text>
+      <textarea value='{{scope}}' maxlength='-1' placeholder-style="color:#cccccc" auto-height placeholder="请输入经营范围..." name='scope'/>
+    </view>
+  </view>
+  <view class="btnbox">
+    <button class="next-btn" formType="submit">添加</button>
+  </view>
+  </form>
+</view>

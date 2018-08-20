@@ -1,0 +1,10 @@
+<!--pages/newuserend/newuserend.wxml-->
+<!-- wetoast -->
+<import src="../../src/wetoast.wxml"/>
+<template is="wetoast" data="{{...__wetoast__}}"/>
+
+<view class="container">
+  <image src="../../images/successfully.png"></image>
+  <view class="finally">申请成功，请等待审核</view>
+  <button bindtap="back">返回首页</button>
+</view>

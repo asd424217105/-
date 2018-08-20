@@ -1,0 +1,76 @@
+/* manualinput.css */
+.company-box{
+  width: 100%;
+  box-sizing: border-box;
+  padding-left: 24rpx;
+  padding-right: 24rpx;
+  background-color: #ffffff;
+  margin-top: 40rpx;
+}
+.company-item{
+  width: 100%;
+  display: flex;
+  align-items:center;
+  justify-content: space-between;
+  height: 100rpx;
+  border-bottom: 1rpx solid #cccccc;
+}
+.company-item3{
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: 15rpx 0;
+}
+.companyname{
+  color: #333333;
+  font-size: 28rpx;
+}
+.company-item input{
+  text-align: right;
+  font-size: 28rpx;
+  width: 450rpx;
+}
+/* 企业性质 */
+.xingzhi text{
+  width: 140rpx;
+  height: 50rpx;
+  line-height: 50rpx;
+  color: #ffffff;
+  background-color: #CCCCCC;  
+  border-radius: 8rpx;
+  margin-left: 25rpx;
+  float: left;
+  font-size: 24rpx;
+  text-align: center;
+}
+.xingzhi .cur{
+  background-color: #0077C1; 
+}
+/* 营业期限 */
+.classname{
+  margin-left: -100rpx;
+  margin-right: -100rpx
+}
+/* 经营范围 */
+.company-item3 text{
+  padding-top: 15rpx;
+}
+.company-item3 textarea{
+  width: 487rpx;
+  min-height: 200rpx;
+}
+/* 按钮 */
+.btnbox{
+  display: flex;
+}
+.next-btn{
+  font-size: 34rpx;
+  margin-top: 50rpx;
+  margin-bottom: 44rpx;
+  width: 600rpx;
+  height: 70rpx;
+  line-height: 70rpx;
+  background-color: #0077c1;
+  color: #ffffff;
+  border-radius: 35rpx;
+}

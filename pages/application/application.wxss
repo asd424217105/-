@@ -1,0 +1,7 @@
+/* apply.wxss */
+ .container image{
+   width: 642rpx;
+   height: 400rpx;
+   margin-top: 50rpx;
+   margin-bottom: 50rpx;
+ }

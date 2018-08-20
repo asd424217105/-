@@ -1,0 +1,75 @@
+<!--ph-newuesrend.wxml-->
+
+<!-- wetoast -->
+<import src="../../src/wetoast.wxml"/>
+<template is="wetoast" data="{{...__wetoast__}}"/>
+
+<view class="container">
+  <form bindsubmit="formSubmit">
+  <view class="company-item0">
+    <text>请仔细查阅申请信息是否属实，信息关系到您的贷款额度</text>
+  </view>
+  <view class="company-box">
+    <view class="company-item">
+      <text>企业名称</text>
+      <input type="text" value='{{res_msg.company_name}}' disabled/> 
+    </view>
+    <view class="company-item">
+      <text>社会统一信用代码</text>
+      <input type="text" value='{{res_msg.licence_num}}' disabled/>
+    </view>
+  </view>
+  <view class="company-box">
+    <view class="company-item">
+      <text>申请人姓名</text>
+      <input type="text" value='{{res_msg.name}}' disabled/> 
+    </view>
+    <view class="company-item">
+      <text>身份证号</text>
+      <input type="text" value='{{res_msg.identity}}' disabled/> 
+    </view>
+    <view class="company-item">
+      <text>性别</text>
+      <view class="xingzhi">
+        <text data-num="1" class="{{res_msg.sex==1?'cur':''}}">男</text>
+        <text data-num="2" class="{{res_msg.sex==2?'cur':''}}">女</text>
+      </view>
+    </view>
+  </view>
+  <view class="company-box">
+     <!-- 地址选择器 -->
+    <view class='company-item'>
+      <text>地址</text>
+      <input type="text" value='{{res_msg.province+res_msg.city+res_msg.area}}'/>
+    </view>
+    <!-- 详细地址 -->
+    <view class="company-item">
+      <text>详细地址</text>
+      <input type="text" value='{{res_msg.address}}'/>
+    </view>
+  </view>
+  <view class="company-box">
+    <view class="company-item2">
+      <text>职业/经营项目</text>
+      <text>{{res_msg.business}}</text>
+    </view>
+  </view> 
+  <view class="company-box">
+    <view class="company-item">
+      <text>申请金额</text>
+      <input type="text" value='{{res_msg.money}}' disabled/> 
+    </view>
+    <view class="company-item">
+      <text>申请期限</text>
+      <input type="text" value='{{res_msg.term}}' disabled/>
+    </view>
+    <view class="company-item2">
+      <text>借款用途</text>
+      <text>{{res_msg.purpose}}</text>
+    </view>
+  </view>
+  <view class="btnbox">
+    <button class="next-btn" formType="submit">确定</button>
+  </view>
+  </form>
+</view>

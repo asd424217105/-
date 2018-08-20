@@ -1,0 +1,16 @@
+<!--pages/rankinglist/rankinglist.wxml-->
+
+<!-- wetoast -->
+<import src="../../src/wetoast.wxml"/>
+<template is="wetoast" data="{{...__wetoast__}}"/>
+
+<view class="container">
+  <view class="ranking-list" wx:for="{{information}}" wx:for-item="item" wx:key="key" wx:for-index="idx">
+    <view class="number">{{idx+1}}</view>
+    <view class="ranking-message">
+      <text class="message">{{item.name}}</text>
+      <text class="money">¥ {{item.money}}</text>
+    </view>
+  </view>
+  <view class="load" bindtap="load" wx:if="{{information.length != 0}}">{{tips}}</view>
+</view>

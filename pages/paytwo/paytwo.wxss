@@ -1,0 +1,103 @@
+/* newuserthree.wxss */
+.company-box{
+  width: 100%;
+  box-sizing: border-box;
+  padding-left: 24rpx;
+  padding-right: 24rpx;
+  background-color: #ffffff;
+  margin-top: 40rpx;
+}
+.company-item{
+  width: 100%;
+  display: flex;
+  align-items:center;
+  justify-content: space-between;
+  height: 100rpx;
+  border-bottom: 1rpx solid #cccccc;
+}
+.company-item2{
+  height: 128rpx;
+}
+.picker{
+  font-size: 28rpx;
+  line-height: 65rpx;
+  min-width: 100rpx;
+}
+.company-item input{
+  text-align: right;
+  font-size: 28rpx;
+  width: 500rpx;
+}
+.testcode-box{
+  display: flex;
+  align-items:center;
+}
+.company-item .w200{
+  width: 250rpx;
+}
+.xingzhi text{
+  width: 140rpx;
+  height: 50rpx;
+  line-height: 50rpx;
+  color: #ffffff;
+  background-color: #CCCCCC;  
+  border-radius: 8rpx;
+  margin-left: 25rpx;
+  float: left;
+  font-size: 24rpx;
+  text-align: center;
+}
+.xingzhi .cur{
+  background-color: #0077C1; 
+}
+/* 上传照片栏目 */
+.voucher{
+  display: flex;
+  flex-wrap: wrap ;
+}
+.upload{
+  width: 90rpx;
+  height: 90rpx;
+  align-items:center;
+  border: 1rpx dashed #CBCBCB;
+  margin-left: 20rpx; 
+  position: relative;
+}
+.upload2{
+  width: 80rpx;
+  height: 90rpx;
+  display: flex;
+  justify-content: center; 
+  align-items:center;
+  margin-left: 10rpx; 
+  position: relative;
+}
+.uploadimg{
+  width: 90rpx;
+  height: 90rpx;
+}
+.upload2 .uploadimg{
+  width: 50rpx;
+  height: 50rpx;
+}
+.close{
+  width: 44rpx;
+  height: 44rpx;
+  position: absolute;
+  top: -14rpx;
+  right: -14rpx;
+}
+.btnbox{
+  display: flex;
+}
+.next-btn{
+  font-size: 34rpx;
+  margin-top: 50rpx;
+  margin-bottom: 44rpx;
+  width: 600rpx;
+  height: 68rpx;
+  line-height: 68rpx;
+  background-color: #0077c1;
+  color: #ffffff;
+}
+

@@ -1,0 +1,52 @@
+/* pages/rankinglist/rankinglist.wxss */
+.container{
+  padding-top: 40rpx;
+}
+.ranking-list{
+  display: flex;
+  align-items:center;
+  justify-content: space-between;
+  width: 100%;
+  min-height: 100rpx;
+  background-color: #ffffff;
+  border-bottom: 1rpx solid #cccccc;
+  box-sizing: border-box;
+  padding: 25rpx 20rpx;
+}
+.number{
+  width: 40rpx;
+  height: 40rpx;
+  line-height: 40rpx;
+  margin-right: 20rpx;
+  text-align: center;
+  font-size: 32rpx;
+  background-color: #999999;
+  color: #ffffff;
+  border-radius: 20rpx;
+}
+.ranking-message{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.ranking-message .message{
+  width: 480rpx;
+}
+.ranking-list:nth-child(1) .number,
+.ranking-list:nth-child(2) .number,
+.ranking-list:nth-child(3) .number{
+  background-color: #EE8501;
+}
+.ranking-list:nth-child(1) .ranking-message .money,
+.ranking-list:nth-child(2) .ranking-message .money,
+.ranking-list:nth-child(3) .ranking-message .money{
+  color: #EE8501;
+}
+.load{
+  background-color: #ffffff;
+  width: 100%;
+  height: 70rpx;
+  text-align: center;
+  line-height: 70rpx;
+}

@@ -1,0 +1,135 @@
+/* pages/auditlist/auditlist.wxss */
+/* 标题栏 */
+.nav{
+  width: 100%;
+  display: flex;
+  height: 90rpx;
+  align-items: center;
+  justify-content: space-between;
+  padding: 5rpx 0rpx 5rpx 0rpx;
+  background-color: #ffffff;
+  margin-bottom: 30rpx;
+  box-sizing: border-box;
+  z-index: 10;
+}
+.nav>view{
+  width: 25%; 
+  font-size: 30rpx;
+  text-align: center;
+  z-index: 10;
+}
+.nav-status{
+  position: relative;
+}
+.triangle{
+  width: 0;
+  height: 0;
+  border-left: 8rpx solid transparent;
+  border-right: 8rpx solid transparent;
+  border-top: 16rpx solid #666;
+  position:absolute;
+  top:50%;
+  margin-top:-7rpx;
+  right:8%;
+}
+/* 状态盒子 */
+.statusbox{
+  position: absolute;
+  right: 1rpx;
+  top: 88rpx;
+  display: flex;
+  flex-direction:column;
+  align-items: center;
+  background-color: #ffffff;
+  width: 170rpx;
+  border-left: 1rpx solid #D7D7D7;
+  border-right: 1rpx solid #D7D7D7;
+  z-index: 2;
+  height: 0;
+  overflow: hidden;
+}
+.statusbox view{
+  height: 60rpx;
+  line-height: 60rpx;
+  width: 100%;
+  text-align: center;
+}
+.statusbox view:nth-child(1){
+  border-top: 1rpx solid #ccc;
+}
+.statusbox view:nth-last-child(1){
+  border-bottom: 1rpx solid #ccc;
+}
+/* 审核列表 */
+.item-box{
+  width: 100%;
+}
+.company-item{
+  display: flex;
+  align-items:center;
+  justify-content: space-between;
+  width: 100%;
+  background-color: #ffffff;
+  border-bottom: 1rpx solid #cccccc;
+  box-sizing: border-box;
+  padding: 25rpx 0rpx 25rpx 0rpx;
+  min-height: 120rpx;
+}
+.company-item>view{
+  width: 25%;
+  text-align: center;
+  padding-left: 4rpx;
+  padding-right: 4rpx;
+}
+.companystatus{
+  color: #00E73C;
+}
+.blue{
+  color: #1C86EE;
+}
+.red{
+  color:red;
+}
+.gary{
+  color:#666666;
+}
+.yellow{
+  color:#FF8000;
+}
+/* 驳回消息 */
+.remark{
+  width: 100%;
+  box-sizing: border-box;
+  padding:15rpx 10rpx;
+  font-size: 28rpx;
+  background-color: #DBDBDB;
+  font-family: "微软雅黑";
+}
+/* 加载更多 */
+.load{
+  background-color: #fff;
+  width: 100%;
+  height: 70rpx;
+  text-align: center;
+  line-height: 70rpx;
+  font-size: 30rpx;
+  color: #999;
+}
+
+/* 页面无数据时页面展示 */
+.notitems{
+  margin-top: 200rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction:column;
+}
+.notitems image{
+  width: 474rpx;
+  height: 368rpx;
+  margin-bottom: 40rpx;
+}
+.notitems .notmessage{
+  font-size: 44rpx;
+  color: #cccccc;
+}

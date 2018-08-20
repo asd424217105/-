@@ -1,0 +1,65 @@
+/* login.wxss */
+/* logo图案 */
+.logo{
+  padding-top: 180rpx;
+  padding-bottom: 40rpx;
+}
+.logo image{
+  width: 191rpx;
+  height: 111rpx;
+}
+/* 账号密码 */
+.login-text{
+  margin-top: 52rpx;
+  border-bottom:solid 2rpx #0077c1;
+  width:600rpx;
+  height:68rpx; 
+  display: flex;
+  align-items: center;
+}
+.login-text image{
+  width: 50rpx;
+  height: 50rpx;
+  margin-left: 15rpx;
+  margin-right: 20rpx;
+}
+.login-text .imgpassword{
+  width: 32rpx;
+  margin-left: 24rpx;
+  margin-right: 28rpx;
+}
+.login-text input{
+  height:68rpx;
+  line-height:68rpx;
+  width:510rpx;
+}
+.radio-group{
+  margin-top: 30rpx;
+  margin-bottom: 40rpx;
+  display: flex;
+  justify-content: center;  
+}
+.radio{
+  display: flex;
+  align-items: center;  
+  font-size: 28rpx;
+  margin-left: 30rpx;
+}
+.login-btn{
+  background-color: #0077C1;
+  width: 600rpx;
+  height: 72rpx;
+  line-height: 72rpx;
+  color: #fff;
+}
+.login-tel{
+  position: absolute;
+  left: 280rpx;
+  bottom: 60rpx;
+  color: #fff;
+  font-size: 28rpx;
+  background-color: #0077C1;
+  width: 200rpx;
+  height: 50rpx;
+  line-height: 50rpx;
+}

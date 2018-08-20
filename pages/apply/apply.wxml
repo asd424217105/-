@@ -1,0 +1,5 @@
+<!--apply.wxml-->
+<view class="container">
+  <image src="../../images/new_user.png" bindtap="newuser"></image>
+  <image src="../../images/not_user.png" bindtap="olduser"></image>
+</view>

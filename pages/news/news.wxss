@@ -1,0 +1,144 @@
+page {
+  background-color: #edf0f3;
+  height: 100%;
+}
+
+.nav {
+  width: 100%;
+  height: 100rpx;
+  display: flex;
+  flex-direction: row;
+  border-bottom: 1px solid #ccc;
+}
+
+.navbox{
+  line-height: 100rpx;
+  text-align: center;
+  flex: 1;
+  font-weight: bold;
+  font-size: 30rpx;
+  background-color: #ffffff;
+}
+
+.default {
+  color: #666;
+}
+
+.red {
+  border-bottom: 1px solid #0077c1;
+  color: #0077c1;
+}
+
+.show {
+  display: block;
+  text-align: center;
+}
+
+.touch-item {
+  font-size: 28rpx;
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1rpx solid #ccc;
+  width: 100%;
+  overflow: hidden;
+  min-height: 120rpx;
+}
+
+.content {
+  width: 100%;
+  -webkit-transition: all 0.4s;
+  transition: all 0.4s;
+  -webkit-transform: translateX(120rpx);
+  transform: translateX(120rpx);
+  position: relative;
+  background: #fff;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-left: -120rpx;
+  padding: 20rpx;
+}
+
+.item-message{
+  display: flex;
+  flex-direction: column;
+  width: 70%;
+  position: relative;
+}
+
+.bodys {
+  text-align: left;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+}
+/* 红点 */
+.redtip{
+  display:block;
+	background:#f00;
+	border-radius:50%;
+	width:16rpx;
+	height:16rpx;
+	top:-18rpx;
+	left:-5rpx;
+	position:absolute;
+}
+
+.title {
+  text-align: left;
+}
+
+.date {
+  color: #999999;
+}
+
+.del {
+  background-color: orangered;
+  width: 120rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  -webkit-transform: translateX(120rpx);
+  transform: translateX(120rpx);
+  -webkit-transition: all 0.4s;
+  transition: all 0.4s;
+}
+
+.load {
+  background-color: #fff;
+  width: 100%;
+  height: 70rpx;
+  text-align: center;
+  line-height: 70rpx;
+  font-size: 30rpx;
+}
+
+.touch-move-active .content, .touch-move-active .del {
+  -webkit-transform: translateX(0);
+  transform: translateX(0);
+}
+
+/* 页面无数据时页面展示 */
+.notitems {
+  margin-top: 200rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.notitems image {
+  width: 474rpx;
+  height: 368rpx;
+  margin-bottom: 40rpx;
+}
+
+.notitems .notmessage {
+  font-size: 44rpx;
+  color: #ccc;
+}
+

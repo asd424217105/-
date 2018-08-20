@@ -1,0 +1,45 @@
+<!--pay.wxml-->
+<!-- wetoast -->
+<import src="../../src/wetoast.wxml"/>
+<template is="wetoast" data="{{...__wetoast__}}"/>
+
+<view class="container">
+  <view class="pay-box">
+    <view class="pay-list">
+      <text>企业名称</text>
+      <input type="text" placeholder="请输入公司名字" class="name" value='{{company_name}}' disabled style='color:#999'/> 
+    </view>
+    <view class="pay-list" wx:if="{{false}}">
+      <text>企业级别</text>
+      <picker bindchange="CompanyLevelsChange" class="name" value="{{index}}" range="{{Levels}}" range-key="{{'name'}}">
+      <view class="picker">
+        {{Levels[index1].name}}
+      </view>
+      </picker> 
+    </view>
+    <view class="pay-list">
+      <text>缴费形式</text>
+      <picker bindchange="PaymentTypeChange"  class="name" value="{{index}}" range="{{PayType}}" range-key="{{'name'}}">
+        <view class="picker" wx:if="{{type_name ==''}}" style='color:#ccc'>请选择缴费方式</view>
+        <view class="picker" wx:if="{{type_name !=''}}">{{type_name}}</view>
+      </picker>
+    </view>
+    <view class="pay-list pay-list2">
+      <text>应缴金额</text>
+      <text>{{money}}元</text>
+    </view>
+  </view>
+  <view class="voucher-box">
+    <view class="voucher-title">缴费凭证</view>
+    <view class="voucher">
+      <view class="upload" wx:for="{{arr_imgsrc}}" wx:for-item="imgsrc" wx:for-index="idx" wx:key="key">
+        <image src="{{imgsrc}}" data-src="{{imgsrc}}" bindtap="previewImage" class="uploadimg"></image>
+        <image src="../../images/close.png" data-idx="{{idx}}" bindtap="close" class="close"></image> 
+      </view>
+      <view class="upload">
+        <image src="../../images/upload.png" bindtap="chooseImageTap" class="uploadimg"></image>
+      </view>
+    </view>
+  </view>
+  <button class="tj-btn" bindtap="tijiao">提交</button>
+</view>

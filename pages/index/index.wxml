@@ -1,0 +1,98 @@
+<!--index.wxml-->
+
+<!-- wetoast -->
+<import src="../../src/wetoast.wxml" />
+<template is="wetoast" data="{{...__wetoast__}}" />
+
+<view class="container">
+  <!-- 功能列表 -->
+  <view class="gongneng">
+    <view class="gongnengbox gongnengboxs" bindtap="input_btn">
+      <image src="../../images/xapply.png"></image>
+      <text>扫码</text>
+    </view>
+    <view class="gongnengbox" wx:for="{{gongneng}}" wx:for-item="item" wx:key="key">
+      <navigator url="{{item.url}}">
+        <image src="{{item.src}}"></image>
+        <text>{{item.text}}</text>
+      </navigator>
+    </view>
+  </view>
+  <!-- 功能列表2 -->
+  <view class="gongneng gongneng2">
+    <view class="gongnengbox" wx:for="{{gongneng2}}" wx:for-item="item" wx:key="key">
+      <navigator url="{{item.url}}">
+        <image src="{{item.src}}"></image>
+        <text>{{item.text}}</text>
+      </navigator>
+    </view>
+  </view>
+  <!-- 公司小提示 -->
+  <view class="tips">
+    <view class="tipbox1">
+      <image src="../../images/tip.png"></image>
+      <text>{{tips}}</text>
+    </view>
+    <view class="tipbox2">
+      <text>| </text>
+      <text class="tipsmore" bindtap="tipsmore">更多</text>
+    </view>
+  </view>
+  <!-- 任务提示 -->
+  <view class="messagebox tipbox">
+    <view>
+      <text class="messagebox-top">{{button.bill}}</text>
+      <text class="messagebox-bootom">待上传征信</text>
+    </view>
+    <view>
+      <text class="messagebox-top">{{button.loan}}</text>
+      <text class="messagebox-bootom">待补交票据</text>
+    </view>
+    <view bindtap='recordList'>
+      <text class="messagebox-top">{{button.makeup}}</text>
+      <text class="messagebox-bootom">企业补录</text>
+    </view>
+    <view bindtap='phRecordList'>
+      <text class="messagebox-top">{{button.report}}</text>
+      <text class="messagebox-bootom">普惠补录</text>
+    </view>
+  </view>
+  <!-- 事业合伙人排名 -->
+  <view class="listbox">
+    <view class="ranking-title">
+      <image src="../../images/ranking.png"></image>
+      <text>我的事业合伙人排名</text>
+    </view>
+    <view class="ranking-yes" wx:if="{{num==true}}">
+      <view class="ranking-list" wx:for="{{rankings}}" wx:key="key" wx:for-item="item" wx:for-index="idx">
+        <view class="number">{{idx+1}}</view>
+        <view class="ranking-message">
+          <text class="message">{{item.name}}</text>
+          <text class="money">¥ {{item.money}}</text>
+        </view>
+      </view>
+      <view class="loadmany" bindtap="seemore">查看更多</view>
+    </view>
+    <view class="ranking-no" wx:if="{{num==false}}">
+      <image src="../../images/xnothing.png"></image>
+      <text>暂无合伙人信息，请继续努力</text>
+    </view>
+  </view>
+  <view class='index-tips'>不积小流，无以成江海</view>
+
+  <!-- 营业执照号弹窗 -->
+  <view class="modal-mask" bindtap="hideModal" catchtouchmove="preventTouchMove" wx:if="{{showModal}}"></view>
+  <view class="modal-dialog" wx:if="{{showModal}}">
+    <view class="modal-title">营业执照号</view>
+    <view class="modal-content">
+      <view class="modal-input">
+        <input placeholder-class="input-holder" bindinput="InputVal" value='{{inputval}}' class="input" placeholder="请输入营业执照号"></input>
+      </view>
+    </view>
+    <view class="modal-footer">
+      <view class="btn-cancel" bindtap="onCancel" data-status="cancel">取消</view>
+      <view class="btn-confirm" bindtap="onConfirm" data-status="confirm">确定</view>
+    </view>
+  </view>
+  
+</view>

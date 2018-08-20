@@ -1,0 +1,48 @@
+<!--information.wxml-->
+
+<!-- wetoast -->
+<import src="../../src/wetoast.wxml"/>
+<template is="wetoast" data="{{...__wetoast__}}"/>
+
+<view class="container">
+  <view class="headimg">
+    <text>头像</text>
+    <image src="{{information.headimg}}" bindtap="modifyHeader"></image>
+  </view>
+  <view class="personal-item">
+    <view class="personal-box">
+      <text>姓名</text>
+      <text class="personal-data">{{information.name}}</text>
+    </view>
+  </view>
+  <view class="personal-item" bindtap="modifyTel">
+    <view class="personal-box">
+      <text>联系方式</text>
+      <text class="personal-data">{{information.tel}}</text>
+    </view>
+  </view>
+  <view class="personal-item">
+    <view class="personal-box">
+      <text>隶属分站</text>
+      <text class="personal-data">{{information.address}}</text>
+    </view>
+  </view>
+  <view class="personal-item">
+    <view class="personal-box">
+      <text>工号</text>
+      <text class="personal-data">{{information.jobnumber}}</text>
+    </view>
+  </view>
+  <view class="personal-item">
+    <view class="personal-box nobottom">
+      <text>职位</text>
+      <text class="personal-data">{{information.position}}</text>
+    </view>
+  </view>
+  <action-sheet hidden="{{actionSheetHidden}}" bindchange="actionSheetbindchange">
+    <block wx:for="{{actionSheetItems}}" wx:key="unique">
+      <action-sheet-item bindtap="{{item.bindtap}}">{{item.txt}}</action-sheet-item>
+    </block>
+    <action-sheet-cancel class="cancel">取消</action-sheet-cancel>
+  </action-sheet>
+</view>
